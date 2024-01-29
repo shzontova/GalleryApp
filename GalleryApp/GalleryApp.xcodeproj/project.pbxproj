@@ -56,15 +56,39 @@
 		4CDAA7E42B680EBE0025F147 /* GalleryApp */ = {
 			isa = PBXGroup;
 			children = (
+				4CDAA8022B68381A0025F147 /* Application */,
+				4CDAA8032B68386B0025F147 /* Modules */,
+				4CDAA8012B6837D00025F147 /* Resources */,
+			);
+			path = GalleryApp;
+			sourceTree = "<group>";
+		};
+		4CDAA8012B6837D00025F147 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4CDAA7F02B680EC00025F147 /* LaunchScreen.storyboard */,
+				4CDAA7EE2B680EC00025F147 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4CDAA8022B68381A0025F147 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				4CDAA7F32B680EC00025F147 /* Info.plist */,
 				4CDAA7E52B680EBE0025F147 /* AppDelegate.swift */,
 				4CDAA7E72B680EBE0025F147 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4CDAA8032B68386B0025F147 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
 				4CDAA7E92B680EBE0025F147 /* ViewController.swift */,
-				4CDAA7EE2B680EC00025F147 /* Assets.xcassets */,
-				4CDAA7F02B680EC00025F147 /* LaunchScreen.storyboard */,
 				4CDAA7EB2B680EBE0025F147 /* Main.storyboard */,
 			);
-			path = GalleryApp;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +318,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RR2UWUA996;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GalleryApp/Info.plist;
+				INFOPLIST_FILE = GalleryApp/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -325,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RR2UWUA996;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GalleryApp/Info.plist;
+				INFOPLIST_FILE = GalleryApp/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

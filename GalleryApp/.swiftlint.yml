@@ -13,6 +13,7 @@ included:
   - GalleryApp
 excluded:
   - Pods
+  - GalleryApp/Application/R.generated.swift
 
 force_cast: warning
 force_try:

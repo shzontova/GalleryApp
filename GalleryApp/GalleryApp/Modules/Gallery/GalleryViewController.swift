@@ -10,7 +10,7 @@ import RxCocoa
 import UIKit
 
 final class GalleryViewController: UIViewController {
-
+    
     @IBOutlet private weak var photoCollectionView: UICollectionView!
     @IBOutlet private weak var titleLabel: UILabel!
     
@@ -28,22 +28,23 @@ private extension GalleryViewController {
     func setupCollectionView() {
         photoCollectionView.delegate = self
         photoCollectionView.dataSource = self
+        photoCollectionView.register(R.nib.galleryCollectionViewCell)
     }
 }
 
 // MARK: UICollectionViewDelegate
-extension GalleryViewController: UICollectionViewDelegate {
-    
-}
+extension GalleryViewController: UICollectionViewDelegate { }
 
 // MARK: UICollectionViewDataSource
 extension GalleryViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { 
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        UICollectionViewCell()
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.galleryCollectionViewCell, for: indexPath) else { return UICollectionViewCell() }
+        return cell
     }
-    
 }

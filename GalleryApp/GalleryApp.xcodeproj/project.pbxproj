@@ -17,6 +17,9 @@
 		4CDAA8102B685B140025F147 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CDAA80F2B685B140025F147 /* Poppins-Light.ttf */; };
 		4CDAA8122B685B3C0025F147 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CDAA8112B685B3B0025F147 /* Poppins-Medium.ttf */; };
 		4CDAA8142B68655A0025F147 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAA8132B68655A0025F147 /* GalleryViewModel.swift */; };
+		4CDAA8182B686D960025F147 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAA8172B686D960025F147 /* GalleryCollectionViewCell.swift */; };
+		4CDAA81A2B686DAB0025F147 /* GalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDAA8192B686DAB0025F147 /* GalleryCollectionViewCell.xib */; };
+		4CDAA81E2B6874310025F147 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAA81D2B6874310025F147 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		4CDAA80F2B685B140025F147 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		4CDAA8112B685B3B0025F147 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		4CDAA8132B68655A0025F147 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		4CDAA8172B686D960025F147 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		4CDAA8192B686DAB0025F147 /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
+		4CDAA81D2B6874310025F147 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		508F76531DF783B62F270140 /* Pods-GalleryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalleryApp.release.xcconfig"; path = "Target Support Files/Pods-GalleryApp/Pods-GalleryApp.release.xcconfig"; sourceTree = "<group>"; };
 		631E822BFC352D6D461D4C8A /* libPods-GalleryApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GalleryApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFCD93E6E007E42D544F7BC /* Pods-GalleryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalleryApp.debug.xcconfig"; path = "Target Support Files/Pods-GalleryApp/Pods-GalleryApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 				4CDAA8022B68381A0025F147 /* Application */,
 				4CDAA8032B68386B0025F147 /* Modules */,
 				4CDAA8012B6837D00025F147 /* Resources */,
+				4CDAA8152B686D630025F147 /* Views */,
 			);
 			path = GalleryApp;
 			sourceTree = "<group>";
@@ -100,6 +107,7 @@
 			children = (
 				4CDAA7F32B680EC00025F147 /* Info.plist */,
 				4CDAA7E52B680EBE0025F147 /* AppDelegate.swift */,
+				4CDAA81D2B6874310025F147 /* R.generated.swift */,
 				4CDAA7E72B680EBE0025F147 /* SceneDelegate.swift */,
 			);
 			path = Application;
@@ -132,6 +140,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		4CDAA8152B686D630025F147 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CDAA8162B686D740025F147 /* Gallery */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4CDAA8162B686D740025F147 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				4CDAA8172B686D960025F147 /* GalleryCollectionViewCell.swift */,
+				4CDAA8192B686DAB0025F147 /* GalleryCollectionViewCell.xib */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
 		974F7D75E1EE764E36D61A4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +173,7 @@
 			buildConfigurationList = 4CDAA7F62B680EC00025F147 /* Build configuration list for PBXNativeTarget "GalleryApp" */;
 			buildPhases = (
 				31AB2B9D5F4F17E46990976A /* [CP] Check Pods Manifest.lock */,
+				4CDAA81C2B6872E10025F147 /* R.swift */,
 				4CDAA8042B6839660025F147 /* SwiftLint */,
 				4CDAA7DE2B680EBE0025F147 /* Sources */,
 				4CDAA7DF2B680EBE0025F147 /* Frameworks */,
@@ -202,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CDAA7F22B680EC00025F147 /* LaunchScreen.storyboard in Resources */,
+				4CDAA81A2B686DAB0025F147 /* GalleryCollectionViewCell.xib in Resources */,
 				4CDAA8102B685B140025F147 /* Poppins-Light.ttf in Resources */,
 				4CDAA8122B685B3C0025F147 /* Poppins-Medium.ttf in Resources */,
 				4CDAA8092B6841630025F147 /* Gallery.storyboard in Resources */,
@@ -270,6 +297,26 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
+		4CDAA81C2B6872E10025F147 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/GalleryApp/Application/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/GalleryApp/Application/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -278,9 +325,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CDAA8072B68415C0025F147 /* GalleryViewController.swift in Sources */,
+				4CDAA8182B686D960025F147 /* GalleryCollectionViewCell.swift in Sources */,
 				4CDAA8142B68655A0025F147 /* GalleryViewModel.swift in Sources */,
 				4CDAA7E62B680EBE0025F147 /* AppDelegate.swift in Sources */,
 				4CDAA7E82B680EBE0025F147 /* SceneDelegate.swift in Sources */,
+				4CDAA81E2B6874310025F147 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

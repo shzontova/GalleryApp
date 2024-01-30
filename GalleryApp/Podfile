@@ -6,6 +6,7 @@ target 'GalleryApp' do
   #Common
   pod 'SwiftLint'
   pod 'Kingfisher'
+  pod 'R.swift'
  
   # Reactive
   pod 'RxSwift'

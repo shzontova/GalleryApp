@@ -5,6 +5,7 @@
 //  Created by Sasha Zontova on 30.01.24.
 //
 
+import Kingfisher
 import UIKit
 
 final class GalleryCollectionViewCell: UICollectionViewCell {
@@ -16,5 +17,9 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
         
     }
 
-    func configure() { }
+    func configure(photo: Photo) {
+        if let url = photo.urls?.url {
+            imageView.kf.setImage(with: url)
+        }
+    }
 }

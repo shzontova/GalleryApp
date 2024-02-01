@@ -38,13 +38,6 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H69-73-jaU">
-                                <rect key="frame" x="0.0" y="87" width="393" height="20"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="tHh-8o-wv4"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,17 +45,13 @@
                             <constraint firstItem="gbD-bb-1UI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="5Wy-iJ-7PK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gbD-bb-1UI" secondAttribute="trailing" constant="30" id="83B-rn-3bp"/>
                             <constraint firstItem="gbD-bb-1UI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="9SI-xy-478"/>
-                            <constraint firstItem="H69-73-jaU" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="C19-5i-loN"/>
                             <constraint firstItem="RrE-4G-IZL" firstAttribute="top" secondItem="gbD-bb-1UI" secondAttribute="bottom" constant="20" id="COF-KX-jjA"/>
-                            <constraint firstItem="H69-73-jaU" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="CkV-GB-TOM"/>
                             <constraint firstItem="RrE-4G-IZL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="U18-GC-m9m"/>
                             <constraint firstItem="RrE-4G-IZL" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="aOt-iv-oDb"/>
                             <constraint firstAttribute="bottom" secondItem="RrE-4G-IZL" secondAttribute="bottom" id="dEd-KZ-Hoh"/>
-                            <constraint firstItem="H69-73-jaU" firstAttribute="top" secondItem="gbD-bb-1UI" secondAttribute="bottom" id="vVX-Yt-Z0C"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gradientView" destination="H69-73-jaU" id="7xl-Op-tdb"/>
                         <outlet property="photoCollectionView" destination="RrE-4G-IZL" id="yrv-MM-E4m"/>
                         <outlet property="titleLabel" destination="gbD-bb-1UI" id="Nyz-py-Slr"/>
                     </connections>

@@ -12,7 +12,6 @@ import UIKit
 final class GalleryViewController: UIViewController {
     
     @IBOutlet private weak var photoCollectionView: UICollectionView!
-    @IBOutlet private weak var gradientView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     
     private let viewModel = GalleryViewModel()
@@ -33,7 +32,6 @@ private extension GalleryViewController {
     
     func setup() {
         setupCollectionView()
-        gradientView.addGradient(startColor: .black, endColor: .clear)
     }
     
     func setupCollectionView() {

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0630A29A0C859BC47610BFF4 /* libPods-GalleryApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 631E822BFC352D6D461D4C8A /* libPods-GalleryApp.a */; };
+		4C0A4E4D2B6BBB4500784F74 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A4E4C2B6BBB4500784F74 /* User.swift */; };
+		4C0A4E502B6BC07100784F74 /* UIView+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A4E4F2B6BC07100784F74 /* UIView+Extenstion.swift */; };
+		4C0A4E542B6BC62B00784F74 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A4E532B6BC62B00784F74 /* ActivityIndicator.swift */; };
 		4CDAA7E62B680EBE0025F147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAA7E52B680EBE0025F147 /* AppDelegate.swift */; };
 		4CDAA7E82B680EBE0025F147 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAA7E72B680EBE0025F147 /* SceneDelegate.swift */; };
 		4CDAA7EF2B680EC00025F147 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CDAA7EE2B680EC00025F147 /* Assets.xcassets */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0A4E4C2B6BBB4500784F74 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4C0A4E4F2B6BC07100784F74 /* UIView+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extenstion.swift"; sourceTree = "<group>"; };
+		4C0A4E532B6BC62B00784F74 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		4CDAA7E22B680EBE0025F147 /* GalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CDAA7E52B680EBE0025F147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CDAA7E72B680EBE0025F147 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +79,47 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4C0A4E4A2B6BABDD00784F74 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4CDAA8132B68655A0025F147 /* GalleryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4C0A4E4B2B6BABED00784F74 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4CDAA8062B68415C0025F147 /* GalleryViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4C0A4E4E2B6BC06000784F74 /* Extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				4C0A4E4F2B6BC07100784F74 /* UIView+Extenstion.swift */,
+			);
+			path = Extenstion;
+			sourceTree = "<group>";
+		};
+		4C0A4E512B6BC60C00784F74 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C0A4E532B6BC62B00784F74 /* ActivityIndicator.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C0A4E522B6BC61500784F74 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4CDAA8192B686DAB0025F147 /* GalleryCollectionViewCell.xib */,
+				4CDAA8172B686D960025F147 /* GalleryCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		4CDAA7D92B680EBE0025F147 = {
 			isa = PBXGroup;
 			children = (
@@ -95,10 +142,12 @@
 			isa = PBXGroup;
 			children = (
 				4CDAA8022B68381A0025F147 /* Application */,
+				4C0A4E4B2B6BABED00784F74 /* Controllers */,
+				4C0A4E4E2B6BC06000784F74 /* Extenstion */,
 				4CDAA8272B6884690025F147 /* Models */,
-				4CDAA8032B68386B0025F147 /* Modules */,
 				4CDAA81F2B6878070025F147 /* Network */,
 				4CDAA8012B6837D00025F147 /* Resources */,
+				4C0A4E4A2B6BABDD00784F74 /* ViewModels */,
 				4CDAA8152B686D630025F147 /* Views */,
 			);
 			path = GalleryApp;
@@ -107,6 +156,7 @@
 		4CDAA8012B6837D00025F147 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4CDAA8082B6841630025F147 /* Gallery.storyboard */,
 				4CDAA7EE2B680EC00025F147 /* Assets.xcassets */,
 				4CDAA80A2B685A8E0025F147 /* Fonts */,
 				4CDAA7F02B680EC00025F147 /* LaunchScreen.storyboard */,
@@ -123,24 +173,6 @@
 				4CDAA7E72B680EBE0025F147 /* SceneDelegate.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		4CDAA8032B68386B0025F147 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				4CDAA8052B68413D0025F147 /* Gallery */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		4CDAA8052B68413D0025F147 /* Gallery */ = {
-			isa = PBXGroup;
-			children = (
-				4CDAA8082B6841630025F147 /* Gallery.storyboard */,
-				4CDAA8062B68415C0025F147 /* GalleryViewController.swift */,
-				4CDAA8132B68655A0025F147 /* GalleryViewModel.swift */,
-			);
-			path = Gallery;
 			sourceTree = "<group>";
 		};
 		4CDAA80A2B685A8E0025F147 /* Fonts */ = {
@@ -163,8 +195,8 @@
 		4CDAA8162B686D740025F147 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				4CDAA8172B686D960025F147 /* GalleryCollectionViewCell.swift */,
-				4CDAA8192B686DAB0025F147 /* GalleryCollectionViewCell.xib */,
+				4C0A4E512B6BC60C00784F74 /* Views */,
+				4C0A4E522B6BC61500784F74 /* Cells */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -184,6 +216,7 @@
 			children = (
 				4CDAA8282B68852D0025F147 /* Photo.swift */,
 				4CDAA82A2B68867A0025F147 /* PhotoURLs.swift */,
+				4C0A4E4C2B6BBB4500784F74 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,10 +392,13 @@
 				4CDAA8182B686D960025F147 /* GalleryCollectionViewCell.swift in Sources */,
 				4CDAA8232B6879330025F147 /* Credentials.swift in Sources */,
 				4CDAA8142B68655A0025F147 /* GalleryViewModel.swift in Sources */,
+				4C0A4E542B6BC62B00784F74 /* ActivityIndicator.swift in Sources */,
 				4CDAA7E62B680EBE0025F147 /* AppDelegate.swift in Sources */,
+				4C0A4E502B6BC07100784F74 /* UIView+Extenstion.swift in Sources */,
 				4CDAA7E82B680EBE0025F147 /* SceneDelegate.swift in Sources */,
 				4CDAA8212B68788F0025F147 /* GalleryAPI.swift in Sources */,
 				4CDAA82B2B68867A0025F147 /* PhotoURLs.swift in Sources */,
+				4C0A4E4D2B6BBB4500784F74 /* User.swift in Sources */,
 				4CDAA8262B687F610025F147 /* GalleryService.swift in Sources */,
 				4CDAA81E2B6874310025F147 /* R.generated.swift in Sources */,
 				4CDAA8292B68852D0025F147 /* Photo.swift in Sources */,

@@ -23,7 +23,7 @@ final class GalleryViewModel {
 
         photoSubject
             .flatMapLatest { [unowned self] _ in
-                self.service.getPhotoList(page: self.page)
+                service.getPhotoList(page: page)
                     .map { result -> [Photo] in
                         self.page += 1
                         return result

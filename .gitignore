@@ -23,3 +23,4 @@ DerivedData/
 Podfile.lock
 Pods/
 *.xcworkspace
+*.generated.swift

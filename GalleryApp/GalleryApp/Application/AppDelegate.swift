@@ -5,15 +5,19 @@
 //  Created by Sasha Zontova on 29.01.24.
 //
 
+import Kingfisher
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        true
+        let cache = ImageCache.default
+        cache.memoryStorage.config.totalCostLimit = 10 * 1024 * 1024
+        cache.diskStorage.config.sizeLimit = 100 * 1024 * 1024
+
+        return true
     }
 
     // MARK: UISceneSession Lifecycle

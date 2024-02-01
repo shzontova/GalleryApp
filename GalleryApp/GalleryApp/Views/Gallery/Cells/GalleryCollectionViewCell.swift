@@ -11,6 +11,7 @@ import UIKit
 final class GalleryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var mainView: UIView!
+    @IBOutlet private weak var likeImageView: UIImageView!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var infoView: UIView!
     @IBOutlet private weak var nameLabel: UILabel!
@@ -19,6 +20,12 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         setup()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        imageView.kf.cancelDownloadTask()
     }
 
     func configure(photo: Photo) {

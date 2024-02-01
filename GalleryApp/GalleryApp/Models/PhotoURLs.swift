@@ -8,7 +8,7 @@
 import ObjectMapper
 
 struct PhotoURLs {
-    var url: String?
+    var url = ""
 }
 
 extension PhotoURLs: Mappable {

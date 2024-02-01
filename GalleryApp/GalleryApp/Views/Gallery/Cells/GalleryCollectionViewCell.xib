@@ -46,16 +46,25 @@
                                     <constraint firstItem="byD-li-MH4" firstAttribute="top" secondItem="el5-Bb-nUt" secondAttribute="top" constant="5" id="r4P-r0-M76"/>
                                 </constraints>
                             </view>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeButton" translatesAutoresizingMaskIntoConstraints="NO" id="A02-Bd-Uaq">
+                                <rect key="frame" x="282" y="5" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="18" id="NXK-oW-q0A"/>
+                                    <constraint firstAttribute="width" secondItem="A02-Bd-Uaq" secondAttribute="height" multiplier="1:1" id="Niu-3g-gv0"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="eg7-b1-KmG" secondAttribute="trailing" id="2V4-j3-TA6"/>
                             <constraint firstAttribute="trailing" secondItem="el5-Bb-nUt" secondAttribute="trailing" id="CKN-Bj-l60"/>
                             <constraint firstAttribute="bottom" secondItem="eg7-b1-KmG" secondAttribute="bottom" id="GQy-bK-Gin"/>
+                            <constraint firstAttribute="trailing" secondItem="A02-Bd-Uaq" secondAttribute="trailing" constant="10" id="N1H-m9-4vi"/>
                             <constraint firstItem="eg7-b1-KmG" firstAttribute="top" secondItem="ave-Mm-I3Y" secondAttribute="top" id="Wuj-LT-KOg"/>
                             <constraint firstAttribute="bottom" secondItem="el5-Bb-nUt" secondAttribute="bottom" id="hvI-tU-Irw"/>
                             <constraint firstItem="el5-Bb-nUt" firstAttribute="leading" secondItem="ave-Mm-I3Y" secondAttribute="leading" id="mUj-8V-EXe"/>
                             <constraint firstItem="eg7-b1-KmG" firstAttribute="leading" secondItem="ave-Mm-I3Y" secondAttribute="leading" id="ubj-gG-OqB"/>
+                            <constraint firstItem="A02-Bd-Uaq" firstAttribute="top" secondItem="ave-Mm-I3Y" secondAttribute="top" constant="5" id="xff-sG-oxg"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -71,10 +80,14 @@
             <connections>
                 <outlet property="imageView" destination="eg7-b1-KmG" id="c6x-c4-tMT"/>
                 <outlet property="infoView" destination="el5-Bb-nUt" id="Oa2-PJ-5ZE"/>
+                <outlet property="likeImageView" destination="A02-Bd-Uaq" id="U2l-lk-Qh2"/>
                 <outlet property="mainView" destination="ave-Mm-I3Y" id="GxR-Bh-8IZ"/>
                 <outlet property="nameLabel" destination="byD-li-MH4" id="nnk-9M-Rlj"/>
             </connections>
             <point key="canvasLocation" x="253.43511450381678" y="58.098591549295776"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="likeButton" width="90" height="90"/>
+    </resources>
 </document>

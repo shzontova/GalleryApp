@@ -13,7 +13,8 @@ import UIKit
 final class DetailsViewController: UIViewController {
     
     @IBOutlet private weak var photoImageView: UIImageView!
-    @IBOutlet private weak var detailsView: UIView!
+    @IBOutlet private weak var detailsView: GradientView!
+    @IBOutlet private var swipeRecognizer: UISwipeGestureRecognizer!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var desriptionLabel: UILabel!
     @IBOutlet private weak var backButton: UIButton!
@@ -44,13 +45,6 @@ private extension DetailsViewController {
         }
         nameLabel.text = photo?.user?.name
         desriptionLabel.text = photo?.description
-        detailsView.addGradient(startColor: .clear, endColor: .black)
-    }
-    
-   func setupSwipeGesture() {
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
-        swipeGesture.direction = .left
-        view.addGestureRecognizer(swipeGesture)
     }
 }
 
@@ -61,13 +55,5 @@ private extension DetailsViewController {
         backButton.rx.tap.asDriver().drive(onNext: { [unowned self]_ in
             dismiss(animated: true)
         }).disposed(by: bag)
-    }
-}
-
-// MARK: Private
-private extension DetailsViewController {
-    
-    @objc private func handleSwipe() {
-        
     }
 }

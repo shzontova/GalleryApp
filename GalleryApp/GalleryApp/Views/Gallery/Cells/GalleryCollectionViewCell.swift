@@ -13,7 +13,7 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var mainView: UIView!
     @IBOutlet private weak var likeImageView: UIImageView!
     @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var infoView: UIView!
+    @IBOutlet private weak var infoView: GradientView!
     @IBOutlet private weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
@@ -43,6 +43,5 @@ private extension GalleryCollectionViewCell {
     func setup() {
         mainView.layer.masksToBounds = true
         mainView.layer.cornerRadius = contentView.bounds.height * 0.1
-        infoView.addGradient(startColor: .black, endColor: .clear)
     }
 }

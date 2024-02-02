@@ -117,6 +117,7 @@
                         <outlet property="backButton" destination="oGV-6F-0zB" id="QoG-rJ-Ze0"/>
                         <outlet property="desriptionLabel" destination="Vd4-ug-Tej" id="sCM-vr-Fvq"/>
                         <outlet property="detailsView" destination="F2y-B2-BBQ" id="lDf-MU-HZP"/>
+                        <outlet property="favoriteButton" destination="bqt-fD-OBx" id="Hf8-Ym-HPm"/>
                         <outlet property="nameLabel" destination="IMG-In-Gbh" id="4ri-G9-nrv"/>
                         <outlet property="photoImageView" destination="j9e-uX-EGA" id="K8v-BK-Udc"/>
                         <outlet property="swipeRecognizer" destination="3Zv-6O-71T" id="HUN-if-yMA"/>

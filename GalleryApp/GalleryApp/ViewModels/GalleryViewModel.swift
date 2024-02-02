@@ -24,6 +24,7 @@ final class GalleryViewModel {
         photoSubject
             .flatMapLatest { [unowned self] _ in
                 service.getPhotoList(page: page)
+                    .filter { !$0.isEmpty }
                     .map { result -> [Photo] in
                         self.page += 1
                         return result

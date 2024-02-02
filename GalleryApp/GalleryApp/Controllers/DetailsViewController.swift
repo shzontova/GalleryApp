@@ -14,6 +14,7 @@ final class DetailsViewController: UIViewController {
     
     @IBOutlet private weak var photoImageView: UIImageView!
     @IBOutlet private weak var detailsView: GradientView!
+    @IBOutlet private weak var favoriteButton: UIButton!
     @IBOutlet private var swipeRecognizer: UISwipeGestureRecognizer!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var desriptionLabel: UILabel!

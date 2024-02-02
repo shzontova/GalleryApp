@@ -52,7 +52,7 @@ private extension GalleryViewController {
     func bind() {
         viewModel.photos
             .drive(onNext: { [unowned self] images in
-                photos = images
+                photos.append(contentsOf: images)
                 updateCoolectionView()
             })
             .disposed(by: bag)
@@ -62,6 +62,14 @@ private extension GalleryViewController {
                 guard let self = self else { return }
                 let selectedPhoto = self.photos[indexPath.item]
                 self.navigateToDetails(photo: selectedPhoto)
+            })
+            .disposed(by: bag)
+        
+        photoCollectionView.rx.willDisplayCell
+            .subscribe(onNext: { [unowned self] _, indexPath in
+                if indexPath.item == photos.count - 2 {
+                    viewModel.loadPhotos()
+                }
             })
             .disposed(by: bag)
     }

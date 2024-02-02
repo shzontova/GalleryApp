@@ -61,7 +61,7 @@ private extension GalleryViewController {
             .subscribe(onNext: { [weak self] indexPath in
                 guard let self = self else { return }
                 let selectedPhoto = self.photos[indexPath.item]
-                self.navigateToDetails(with: selectedPhoto)
+                self.navigateToDetails(photo: selectedPhoto)
             })
             .disposed(by: bag)
     }
@@ -76,11 +76,13 @@ private extension GalleryViewController {
         }
     }
     
-    func navigateToDetails(with image: Photo) {
-        let detailsViewController = DetailsViewController()
-        detailsViewController.modalPresentationStyle = .fullScreen
-        detailsViewController.modalTransitionStyle = .crossDissolve
-        present(detailsViewController, animated: true, completion: nil)
+    func navigateToDetails(photo: Photo) {
+        if let detailsViewController = R.storyboard.details.detailsViewController() {
+            detailsViewController.modalPresentationStyle = .fullScreen
+            detailsViewController.modalTransitionStyle = .crossDissolve
+            detailsViewController.configure(photo: photo)
+            present(detailsViewController, animated: true, completion: nil)
+        }
     }
 }
 

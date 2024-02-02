@@ -9,7 +9,6 @@ import ObjectMapper
 
 struct User {
     var name = ""
-    var username = ""
 }
 
 extension User: Mappable {
@@ -18,6 +17,5 @@ extension User: Mappable {
     
     mutating func mapping(map: Map) {
         name <- map["name"]
-        username <- map["username"]
     }
 }

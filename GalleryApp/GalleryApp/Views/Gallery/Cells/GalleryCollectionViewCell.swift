@@ -34,6 +34,7 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
             imageView.kf.setImage(with: url)
         }
         nameLabel.text = photo.user?.name
+        likeImageView.isHidden = !DatabaseManager.isFavorite(photo: photo)
     }
 }
 

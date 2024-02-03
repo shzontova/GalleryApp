@@ -25,6 +25,12 @@ final class GalleryViewController: UIViewController {
         setup()
         bind()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateCoolectionView()
+    }
 }
 
 // MARK: Setup

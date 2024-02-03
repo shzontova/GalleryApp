@@ -10,7 +10,6 @@ import Foundation
 struct PhotoDetails {
     var id: String
     var name: String?
-    var username: String?
+    var url: String?
     var description: String?
-    var isFavorite: Bool
 }

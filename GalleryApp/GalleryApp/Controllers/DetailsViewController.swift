@@ -41,11 +41,15 @@ final class DetailsViewController: UIViewController {
 private extension DetailsViewController {
     
     func setup() {
+        viewModel.setPhoto(photo ?? .init())
         if let url = URL(string: photo?.urls?.url ?? "") {
+            photoImageView.kf.indicatorType = .activity
             photoImageView.kf.setImage(with: url)
         }
         nameLabel.text = photo?.user?.name
         desriptionLabel.text = photo?.description
+        let buttonImage = DatabaseManager.isFavorite(photo: photo ?? .init()) ? R.image.likeButton() : R.image.unlikeButton()
+        favoriteButton.setImage(buttonImage, for: .normal)
     }
 }
 
@@ -56,5 +60,16 @@ private extension DetailsViewController {
         backButton.rx.tap.asDriver().drive(onNext: { [unowned self]_ in
             dismiss(animated: true)
         }).disposed(by: bag)
+        
+        viewModel.isFavoriteRelay
+            .bind(onNext: { [unowned self] isFavorite in
+                let buttonImage = isFavorite ? R.image.likeButton() : R.image.unlikeButton()
+                favoriteButton.setImage(buttonImage, for: .normal)
+            })
+            .disposed(by: bag)
+
+        favoriteButton.rx.tap.asDriver()
+            .drive(viewModel.favoriteSubject)
+            .disposed(by: bag)
     }
 }

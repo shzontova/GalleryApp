@@ -11,6 +11,10 @@ import UIKit
 
 final class GalleryViewController: UIViewController {
     
+    enum Constants {
+        static let screenWidth = UIScreen.main.fixedCoordinateSpace.bounds.size.width
+    }
+    
     @IBOutlet private weak var photoCollectionView: UICollectionView!
     @IBOutlet private weak var titleLabel: UILabel!
     
@@ -121,8 +125,8 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.galleryCollectionViewCell, for: indexPath) != nil {
-            let width = (view.bounds.width - 30) / 2
-            let height = view.bounds.width / 3
+            let width = (Constants.screenWidth - 30) / 2
+            let height = Constants.screenWidth / 3
             return CGSize(width: width, height: height)
         }
         

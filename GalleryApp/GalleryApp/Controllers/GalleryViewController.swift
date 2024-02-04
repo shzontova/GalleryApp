@@ -20,12 +20,19 @@ final class GalleryViewController: UIViewController {
     
     private let viewModel = GalleryViewModel()
     private let bag = DisposeBag()
+    private let reloadSubject = PublishSubject<Void>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
         bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        reloadSubject.onNext(())
     }
 }
 
@@ -51,7 +58,6 @@ private extension GalleryViewController {
 private extension GalleryViewController {
     
     func bind() {
-        
         viewModel.photoRelay
             .bind(to: photoCollectionView.rx.items(cellIdentifier: R.reuseIdentifier.galleryCollectionViewCell.identifier,
                                                    cellType: GalleryCollectionViewCell.self)) { _, photo, cell in
@@ -61,16 +67,20 @@ private extension GalleryViewController {
         photoCollectionView.rx.modelSelected(Photo.self)
             .subscribe(onNext: { [unowned self] selectedPhoto in
                 navigateToDetails(photo: selectedPhoto)
-            })
-            .disposed(by: bag)
+            }).disposed(by: bag)
         
         photoCollectionView.rx.willDisplayCell
             .subscribe(onNext: { [unowned self] _, indexPath in
                 let items = viewModel.photoRelay.value.count
-                
                 if indexPath.item == items - 2 {
                     viewModel.loadPhotos()
                 }
+            }).disposed(by: bag)
+        
+        reloadSubject
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                photoCollectionView.reloadData()
             }).disposed(by: bag)
     }
 }

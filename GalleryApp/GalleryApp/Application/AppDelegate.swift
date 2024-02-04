@@ -12,7 +12,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
         let cache = KingfisherManager.shared.cache
         cache.memoryStorage.config.totalCostLimit = 10 * 1024 * 1024
         cache.diskStorage.config.sizeLimit = UInt(100 * 1024 * 1024)

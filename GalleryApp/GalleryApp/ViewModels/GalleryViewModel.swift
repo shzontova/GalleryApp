@@ -20,9 +20,9 @@ final class GalleryViewModel {
     init() {
         photoSubject
             .flatMapLatest { [unowned self] _ in
-                service.getPhotoList(page: page)
-                    .filter { !$0.isEmpty }
-            }.subscribe(onNext: { [unowned self] result in
+                service.getPhotoList(page: page) }
+            .filter { !$0.isEmpty }
+            .subscribe(onNext: { [unowned self] result in
                 page += 1
                 var photos = photoRelay.value
                 photos.append(contentsOf: result)

@@ -5,8 +5,8 @@
 //  Created by Sasha Zontova on 29.01.24.
 //
 
-import RxSwift
 import RxCocoa
+import RxSwift
 import UIKit
 
 final class GalleryViewController: UIViewController {
@@ -20,8 +20,6 @@ final class GalleryViewController: UIViewController {
     
     private let viewModel = GalleryViewModel()
     private let bag = DisposeBag()
-    
-    private var photos: [Photo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,29 +51,27 @@ private extension GalleryViewController {
 private extension GalleryViewController {
     
     func bind() {
-        viewModel.photos
-            .drive(onNext: { [unowned self] images in photos = images })
-            .disposed(by: bag)
         
-        viewModel.photos
-            .drive(photoCollectionView.rx.items(cellIdentifier: R.reuseIdentifier.galleryCollectionViewCell.identifier, cellType: GalleryCollectionViewCell.self)) { _, photo, cell in
+        viewModel.photoRelay
+            .bind(to: photoCollectionView.rx.items(cellIdentifier: R.reuseIdentifier.galleryCollectionViewCell.identifier,
+                                                   cellType: GalleryCollectionViewCell.self)) { _, photo, cell in
                 cell.configure(photo: photo)
             }.disposed(by: bag)
         
         photoCollectionView.rx.modelSelected(Photo.self)
-            .subscribe(onNext: { [weak self] selectedPhoto in
-                guard let self = self else { return }
-                self.navigateToDetails(photo: selectedPhoto)
+            .subscribe(onNext: { [unowned self] selectedPhoto in
+                navigateToDetails(photo: selectedPhoto)
             })
             .disposed(by: bag)
         
         photoCollectionView.rx.willDisplayCell
             .subscribe(onNext: { [unowned self] _, indexPath in
-                if indexPath.item == photos.count - 2 {
+                let items = viewModel.photoRelay.value.count
+                
+                if indexPath.item == items - 2 {
                     viewModel.loadPhotos()
                 }
-            })
-            .disposed(by: bag)
+            }).disposed(by: bag)
     }
 }
 

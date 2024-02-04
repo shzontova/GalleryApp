@@ -94,8 +94,8 @@
 		4C0A4E4A2B6BABDD00784F74 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				4CDAA8132B68655A0025F147 /* GalleryViewModel.swift */,
 				4C0A4E5A2B6BD22800784F74 /* DetailsViewModel.swift */,
+				4CDAA8132B68655A0025F147 /* GalleryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";

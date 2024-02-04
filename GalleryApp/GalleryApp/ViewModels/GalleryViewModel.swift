@@ -13,24 +13,21 @@ final class GalleryViewModel {
     private let bag = DisposeBag()
     private let service = GalleryService.shared
     private let photoSubject = PublishSubject<Void>()
-    private let photoRelay = BehaviorRelay<[Photo]>(value: [])
-
-    let photos: Driver<[Photo]>
     private var page = 1
+    
+    let photoRelay = BehaviorRelay<[Photo]>(value: [])
 
     init() {
-        photos = photoRelay.asDriver()
-
         photoSubject
             .flatMapLatest { [unowned self] _ in
                 service.getPhotoList(page: page)
                     .filter { !$0.isEmpty }
-                    .map { result -> [Photo] in
-                        self.page += 1
-                        return self.photoRelay.value + result
-                    }
-            }
-            .bind(to: photoRelay)
+            }.subscribe(onNext: { [unowned self] result in
+                page += 1
+                var photos = photoRelay.value
+                photos.append(contentsOf: result)
+                photoRelay.accept(photos)
+            })
             .disposed(by: bag)
 
         loadPhotos()

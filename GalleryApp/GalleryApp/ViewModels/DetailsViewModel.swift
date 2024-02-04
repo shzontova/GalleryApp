@@ -28,9 +28,7 @@ final class DetailsViewModel {
     
     private func bind() {
         favoriteSubject
-            .subscribe(onNext: { [weak self] in
-                self?.isSavedPhoto()
-            })
+            .subscribe(onNext: { [unowned self] in isSavedPhoto() })
             .disposed(by: bag)
     }
 }

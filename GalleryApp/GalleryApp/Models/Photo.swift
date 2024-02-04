@@ -9,7 +9,7 @@ import ObjectMapper
 
 struct Photo {
     var id = ""
-    var descrption = ""
+    var description = ""
     var urls: PhotoURLs?
     var user: User?
 }
@@ -20,7 +20,7 @@ extension Photo: Mappable {
     
     mutating func mapping(map: Map) {
         id <- map["id"]
-        descrption <- map["descrption"]
+        description <- map["description"]
         urls <- map["urls"]
         user <- map["user"]
     }

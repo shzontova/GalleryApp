@@ -19,8 +19,8 @@ force_cast: warning
 force_try:
   severity: warning
 type_body_length:
-  - 30
   - 40
+  - 50
 file_length:
   warning: 300
   error: 400

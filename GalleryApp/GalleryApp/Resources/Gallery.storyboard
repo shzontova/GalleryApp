@@ -51,6 +51,7 @@
                             <constraint firstAttribute="bottom" secondItem="RrE-4G-IZL" secondAttribute="bottom" id="dEd-KZ-Hoh"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5Dx-ez-PfM"/>
                     <connections>
                         <outlet property="photoCollectionView" destination="RrE-4G-IZL" id="yrv-MM-E4m"/>
                         <outlet property="titleLabel" destination="gbD-bb-1UI" id="Nyz-py-Slr"/>
@@ -58,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45.038167938931295" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="881.67938931297704" y="3.5211267605633805"/>
         </scene>
     </scenes>
 </document>

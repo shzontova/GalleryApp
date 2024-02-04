@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Light.ttf">
+            <string>Poppins-Light</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Details View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="DetailsViewController" customModule="GalleryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkf-C1-9xP">
+                                <rect key="frame" x="158.33333333333334" y="64" width="76.333333333333343" height="28"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGV-6F-0zB">
+                                <rect key="frame" x="20" y="66" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oGV-6F-0zB" secondAttribute="height" multiplier="1:1" id="itU-aE-B1a"/>
+                                    <constraint firstAttribute="width" constant="25" id="si5-bW-Mtz"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="backButton"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j9e-uX-EGA">
+                                <rect key="frame" x="0.0" y="101" width="393" height="717"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2y-B2-BBQ" customClass="GradientView" customModule="GalleryApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="764.66666666666663" width="393" height="53.333333333333371"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-In-Gbh">
+                                        <rect key="frame" x="10" y="5.0000000000000018" width="373" height="22.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vd4-ug-Tej">
+                                        <rect key="frame" x="10" y="28.666666666666742" width="373" height="19.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Vd4-ug-Tej" secondAttribute="bottom" constant="5" id="CGc-iA-zsy"/>
+                                    <constraint firstAttribute="trailing" secondItem="IMG-In-Gbh" secondAttribute="trailing" constant="10" id="GLh-Lx-3Mk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vd4-ug-Tej" secondAttribute="trailing" constant="10" id="I9x-4f-BrY"/>
+                                    <constraint firstItem="Vd4-ug-Tej" firstAttribute="leading" secondItem="F2y-B2-BBQ" secondAttribute="leading" constant="10" id="VcW-Fb-4i2"/>
+                                    <constraint firstItem="IMG-In-Gbh" firstAttribute="top" secondItem="F2y-B2-BBQ" secondAttribute="top" constant="5" id="au2-Wb-5nT"/>
+                                    <constraint firstItem="IMG-In-Gbh" firstAttribute="leading" secondItem="F2y-B2-BBQ" secondAttribute="leading" constant="10" id="fxB-Ln-shf"/>
+                                    <constraint firstItem="Vd4-ug-Tej" firstAttribute="top" secondItem="IMG-In-Gbh" secondAttribute="bottom" constant="1" id="ufL-5u-X9K"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqt-fD-OBx">
+                                <rect key="frame" x="343" y="64" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="ERa-pJ-fNE"/>
+                                    <constraint firstAttribute="width" secondItem="bqt-fD-OBx" secondAttribute="height" multiplier="1:1" id="Xxo-Qc-XGs"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="unlikeButton"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="F2y-B2-BBQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4N4-0a-qHr"/>
+                            <constraint firstItem="j9e-uX-EGA" firstAttribute="top" secondItem="oGV-6F-0zB" secondAttribute="bottom" constant="10" id="D01-eH-ELM"/>
+                            <constraint firstItem="oGV-6F-0zB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="IX8-cE-Zxt"/>
+                            <constraint firstItem="F2y-B2-BBQ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="JC8-QC-WcA"/>
+                            <constraint firstItem="j9e-uX-EGA" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="NpP-x3-iKL"/>
+                            <constraint firstItem="oGV-6F-0zB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="7" id="Rmv-iv-70T"/>
+                            <constraint firstItem="F2y-B2-BBQ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ajW-hY-YOt"/>
+                            <constraint firstItem="F2y-B2-BBQ" firstAttribute="height" relation="lessThanOrEqual" secondItem="j9e-uX-EGA" secondAttribute="height" multiplier="0.15" id="anD-o7-Oex"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bqt-fD-OBx" secondAttribute="trailing" constant="20" id="dt6-Nl-g3v"/>
+                            <constraint firstItem="Kkf-C1-9xP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="esl-7I-tzr"/>
+                            <constraint firstItem="j9e-uX-EGA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fNk-uP-veI"/>
+                            <constraint firstItem="j9e-uX-EGA" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="lmz-Ah-WVH"/>
+                            <constraint firstItem="Kkf-C1-9xP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="q6d-tv-c19"/>
+                            <constraint firstItem="bqt-fD-OBx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="vSr-rw-foi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="oGV-6F-0zB" id="QoG-rJ-Ze0"/>
+                        <outlet property="descriptionLabel" destination="Vd4-ug-Tej" id="sCM-vr-Fvq"/>
+                        <outlet property="detailsView" destination="F2y-B2-BBQ" id="lDf-MU-HZP"/>
+                        <outlet property="favoriteButton" destination="bqt-fD-OBx" id="Hf8-Ym-HPm"/>
+                        <outlet property="imageView" destination="j9e-uX-EGA" id="K8v-BK-Udc"/>
+                        <outlet property="nameLabel" destination="IMG-In-Gbh" id="4ri-G9-nrv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75.572519083969468" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backButton" width="100" height="100"/>
+        <image name="unlikeButton" width="90" height="90"/>
+    </resources>
+</document>

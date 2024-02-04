@@ -58,7 +58,7 @@ The project uses the following third-party libraries:
 - ObjectMapper: A Swift library for mapping JSON to objects and vice versa. 
 - Kingfisher: A lightweight library for downloading and caching images in Swift.
 
-<img src="![IMG_4170](https://github.com/shzontova/GalleryApp/assets/156919324/2a49bce0-fd47-44cf-8eab-97db1222e049)" alt="LaunchScreen" height="500"/>
-<img src="![IMG_4168](https://github.com/shzontova/GalleryApp/assets/156919324/8eab1988-bcc7-4ddf-af77-92e6915f2dfc)" alt="GalleryScreen" height="500"/>
-<img src="![IMG_4169](https://github.com/shzontova/GalleryApp/assets/156919324/17b8d65c-2595-434f-a3b2-5abd93011b88)" alt="DetailsScreen" height="500"/>
+<img src="https://github.com/shzontova/GalleryApp/assets/156919324/2a49bce0-fd47-44cf-8eab-97db1222e049" alt="LaunchScreen" height="500"/>
+<img src="https://github.com/shzontova/GalleryApp/assets/156919324/8eab1988-bcc7-4ddf-af77-92e6915f2dfc" alt="GalleryScreen" height="500"/>
+<img src="https://github.com/shzontova/GalleryApp/assets/156919324/17b8d65c-2595-434f-a3b2-5abd93011b88" alt="DetailsScreen" height="500"/>
 

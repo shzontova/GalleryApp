@@ -103,8 +103,8 @@
 		4C0A4E4B2B6BABED00784F74 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4CDAA8062B68415C0025F147 /* GalleryViewController.swift */,
 				4C0A4E582B6BD1F500784F74 /* DetailsViewController.swift */,
+				4CDAA8062B68415C0025F147 /* GalleryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

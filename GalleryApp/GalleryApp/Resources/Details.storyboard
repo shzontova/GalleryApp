@@ -44,32 +44,30 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2y-B2-BBQ" customClass="GradientView" customModule="GalleryApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="765.66666666666663" width="393" height="52.333333333333371"/>
+                                <rect key="frame" x="0.0" y="764.66666666666663" width="393" height="53.333333333333371"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="meE-Vy-yji">
-                                        <rect key="frame" x="10" y="0.0" width="373" height="42.333333333333336"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-In-Gbh">
-                                                <rect key="frame" x="0.0" y="0.0" width="373" height="22.666666666666668"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vd4-ug-Tej">
-                                                <rect key="frame" x="0.0" y="22.666666666666742" width="373" height="19.666666666666671"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-In-Gbh">
+                                        <rect key="frame" x="10" y="5.0000000000000018" width="373" height="22.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vd4-ug-Tej">
+                                        <rect key="frame" x="10" y="28.666666666666742" width="373" height="19.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="meE-Vy-yji" secondAttribute="bottom" constant="10" id="5K5-RC-JIB"/>
-                                    <constraint firstItem="meE-Vy-yji" firstAttribute="leading" secondItem="F2y-B2-BBQ" secondAttribute="leading" constant="10" id="P2x-9N-Red"/>
-                                    <constraint firstAttribute="trailing" secondItem="meE-Vy-yji" secondAttribute="trailing" constant="10" id="S0m-Bu-Lcn"/>
-                                    <constraint firstItem="meE-Vy-yji" firstAttribute="top" secondItem="F2y-B2-BBQ" secondAttribute="top" id="eej-l1-O5G"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vd4-ug-Tej" secondAttribute="bottom" constant="5" id="CGc-iA-zsy"/>
+                                    <constraint firstAttribute="trailing" secondItem="IMG-In-Gbh" secondAttribute="trailing" constant="10" id="GLh-Lx-3Mk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vd4-ug-Tej" secondAttribute="trailing" constant="10" id="I9x-4f-BrY"/>
+                                    <constraint firstItem="Vd4-ug-Tej" firstAttribute="leading" secondItem="F2y-B2-BBQ" secondAttribute="leading" constant="10" id="VcW-Fb-4i2"/>
+                                    <constraint firstItem="IMG-In-Gbh" firstAttribute="top" secondItem="F2y-B2-BBQ" secondAttribute="top" constant="5" id="au2-Wb-5nT"/>
+                                    <constraint firstItem="IMG-In-Gbh" firstAttribute="leading" secondItem="F2y-B2-BBQ" secondAttribute="leading" constant="10" id="fxB-Ln-shf"/>
+                                    <constraint firstItem="Vd4-ug-Tej" firstAttribute="top" secondItem="IMG-In-Gbh" secondAttribute="bottom" constant="1" id="ufL-5u-X9K"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="startColor">
@@ -109,22 +107,17 @@
                             <constraint firstItem="Kkf-C1-9xP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="q6d-tv-c19"/>
                             <constraint firstItem="bqt-fD-OBx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="vSr-rw-foi"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="3Zv-6O-71T" appends="YES" id="3tI-05-bTH"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="oGV-6F-0zB" id="QoG-rJ-Ze0"/>
-                        <outlet property="desriptionLabel" destination="Vd4-ug-Tej" id="sCM-vr-Fvq"/>
+                        <outlet property="descriptionLabel" destination="Vd4-ug-Tej" id="sCM-vr-Fvq"/>
                         <outlet property="detailsView" destination="F2y-B2-BBQ" id="lDf-MU-HZP"/>
                         <outlet property="favoriteButton" destination="bqt-fD-OBx" id="Hf8-Ym-HPm"/>
                         <outlet property="imageView" destination="j9e-uX-EGA" id="K8v-BK-Udc"/>
                         <outlet property="nameLabel" destination="IMG-In-Gbh" id="4ri-G9-nrv"/>
-                        <outlet property="swipeRecognizer" destination="3Zv-6O-71T" id="HUN-if-yMA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="3Zv-6O-71T"/>
             </objects>
             <point key="canvasLocation" x="75.572519083969468" y="3.5211267605633805"/>
         </scene>

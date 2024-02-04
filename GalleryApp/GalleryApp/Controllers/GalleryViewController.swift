@@ -13,6 +13,8 @@ final class GalleryViewController: UIViewController {
     
     enum Constants {
         static let screenWidth = UIScreen.main.fixedCoordinateSpace.bounds.size.width
+        static let cellInset: CGFloat = 10
+        static let cellSideInset: CGFloat = 5
     }
     
     @IBOutlet private weak var photoCollectionView: UICollectionView!
@@ -49,7 +51,10 @@ private extension GalleryViewController {
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = .init(top: 5, left: 10, bottom: 5, right: 10)
+        layout.sectionInset = .init(top: Constants.cellSideInset,
+                                    left: Constants.cellInset,
+                                    bottom: Constants.cellSideInset,
+                                    right: Constants.cellInset)
         photoCollectionView.collectionViewLayout = layout
     }
 }
@@ -64,9 +69,9 @@ private extension GalleryViewController {
                 cell.configure(photo: photo)
             }.disposed(by: bag)
         
-        photoCollectionView.rx.modelSelected(Photo.self)
-            .subscribe(onNext: { [unowned self] selectedPhoto in
-                navigateToDetails(photo: selectedPhoto)
+        photoCollectionView.rx.itemSelected
+            .subscribe(onNext: { [unowned self] indexPath in
+                navigateToDetails(index: indexPath.item)
             }).disposed(by: bag)
         
         photoCollectionView.rx.willDisplayCell
@@ -94,11 +99,11 @@ private extension GalleryViewController {
         }
     }
     
-    func navigateToDetails(photo: Photo) {
+    func navigateToDetails(index: Int) {
         if let detailsViewController = R.storyboard.details.detailsViewController() {
             detailsViewController.modalPresentationStyle = .fullScreen
             detailsViewController.modalTransitionStyle = .crossDissolve
-            detailsViewController.configure(photo: photo)
+            detailsViewController.configure(photos: viewModel.photoRelay.value, photoIndex: index)
             present(detailsViewController, animated: true, completion: nil)
         }
     }
@@ -108,12 +113,9 @@ private extension GalleryViewController {
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.galleryCollectionViewCell, for: indexPath) != nil {
-            let width = (Constants.screenWidth - 30) / 2
-            let height = Constants.screenWidth / 3
-            return CGSize(width: width, height: height)
-        }
-        
-        return .zero
+        guard collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.galleryCollectionViewCell, for: indexPath) != nil else { return .zero }
+        let width = (Constants.screenWidth - 3 * Constants.cellInset) / 2
+        let height = Constants.screenWidth / 3
+        return CGSize(width: width, height: height)
     }
 }

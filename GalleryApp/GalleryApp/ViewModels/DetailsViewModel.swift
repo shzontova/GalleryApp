@@ -28,7 +28,7 @@ final class DetailsViewModel {
     
     private func bind() {
         favoriteSubject
-            .subscribe(onNext: { [unowned self] in isSavedPhoto() })
+            .subscribe(onNext: { [unowned self] in toggleFavoritePhoto() })
             .disposed(by: bag)
     }
 }
@@ -36,7 +36,7 @@ final class DetailsViewModel {
 // MARK: Private
 private extension DetailsViewModel {
     
-    func isSavedPhoto() {
+    func toggleFavoritePhoto() {
         if let photo {
             let isFavorite = !DatabaseManager.isFavorite(photo: photo)
             DatabaseManager.toggleFavorite(photo: photo)

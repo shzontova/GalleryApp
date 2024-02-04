@@ -29,10 +29,7 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(photo: Photo) {
-        if let url = URL(string: photo.urls?.url ?? "") {
-            imageView.kf.indicatorType = .custom(indicator: ActivityIndicator())
-            imageView.kf.setImage(with: url)
-        }
+        imageView.loadImage(urlString: photo.urls?.url ?? "")
         nameLabel.text = photo.user?.name
         likeImageView.isHidden = !DatabaseManager.isFavorite(photo: photo)
     }

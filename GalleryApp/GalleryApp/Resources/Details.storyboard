@@ -41,6 +41,7 @@
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j9e-uX-EGA">
                                 <rect key="frame" x="0.0" y="101" width="393" height="717"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2y-B2-BBQ" customClass="GradientView" customModule="GalleryApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="765.66666666666663" width="393" height="52.333333333333371"/>
@@ -117,8 +118,8 @@
                         <outlet property="desriptionLabel" destination="Vd4-ug-Tej" id="sCM-vr-Fvq"/>
                         <outlet property="detailsView" destination="F2y-B2-BBQ" id="lDf-MU-HZP"/>
                         <outlet property="favoriteButton" destination="bqt-fD-OBx" id="Hf8-Ym-HPm"/>
+                        <outlet property="imageView" destination="j9e-uX-EGA" id="K8v-BK-Udc"/>
                         <outlet property="nameLabel" destination="IMG-In-Gbh" id="4ri-G9-nrv"/>
-                        <outlet property="photoImageView" destination="j9e-uX-EGA" id="K8v-BK-Udc"/>
                         <outlet property="swipeRecognizer" destination="3Zv-6O-71T" id="HUN-if-yMA"/>
                     </connections>
                 </viewController>

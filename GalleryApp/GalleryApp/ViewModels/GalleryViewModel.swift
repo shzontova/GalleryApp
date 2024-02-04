@@ -27,7 +27,7 @@ final class GalleryViewModel {
                     .filter { !$0.isEmpty }
                     .map { result -> [Photo] in
                         self.page += 1
-                        return result
+                        return self.photoRelay.value + result
                     }
             }
             .bind(to: photoRelay)

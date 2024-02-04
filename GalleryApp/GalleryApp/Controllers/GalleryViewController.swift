@@ -29,12 +29,6 @@ final class GalleryViewController: UIViewController {
         setup()
         bind()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        updateCoolectionView()
-    }
 }
 
 // MARK: Setup
@@ -45,9 +39,8 @@ private extension GalleryViewController {
     }
     
     func setupCollectionView() {
-        photoCollectionView.delegate = self
-        photoCollectionView.dataSource = self
         photoCollectionView.register(R.nib.galleryCollectionViewCell)
+        photoCollectionView.rx.setDelegate(self).disposed(by: bag)
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -61,16 +54,17 @@ private extension GalleryViewController {
     
     func bind() {
         viewModel.photos
-            .drive(onNext: { [unowned self] images in
-                photos.append(contentsOf: images)
-                updateCoolectionView()
-            })
+            .drive(onNext: { [unowned self] images in photos = images })
             .disposed(by: bag)
         
-        photoCollectionView.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
+        viewModel.photos
+            .drive(photoCollectionView.rx.items(cellIdentifier: R.reuseIdentifier.galleryCollectionViewCell.identifier, cellType: GalleryCollectionViewCell.self)) { _, photo, cell in
+                cell.configure(photo: photo)
+            }.disposed(by: bag)
+        
+        photoCollectionView.rx.modelSelected(Photo.self)
+            .subscribe(onNext: { [weak self] selectedPhoto in
                 guard let self = self else { return }
-                let selectedPhoto = self.photos[indexPath.item]
                 self.navigateToDetails(photo: selectedPhoto)
             })
             .disposed(by: bag)
@@ -101,22 +95,6 @@ private extension GalleryViewController {
             detailsViewController.configure(photo: photo)
             present(detailsViewController, animated: true, completion: nil)
         }
-    }
-}
-
-// MARK: UICollectionViewDelegate
-extension GalleryViewController: UICollectionViewDelegate { }
-
-// MARK: UICollectionViewDataSource
-extension GalleryViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { photos.count }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.galleryCollectionViewCell, for: indexPath) else { return UICollectionViewCell()}
-        cell.configure(photo: photos[indexPath.item])
-        return cell
     }
 }
 

@@ -12,7 +12,7 @@ import UIKit
 
 final class DetailsViewController: UIViewController {
     
-    @IBOutlet private weak var photoImageView: UIImageView!
+    @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var detailsView: GradientView!
     @IBOutlet private weak var favoriteButton: UIButton!
     @IBOutlet private var swipeRecognizer: UISwipeGestureRecognizer!
@@ -42,12 +42,13 @@ private extension DetailsViewController {
     
     func setup() {
         viewModel.setPhoto(photo ?? .init())
-        if let url = URL(string: photo?.urls?.url ?? "") {
-            photoImageView.kf.indicatorType = .activity
-            photoImageView.kf.setImage(with: url)
-        }
         nameLabel.text = photo?.user?.name
         desriptionLabel.text = photo?.description
+        imageView.loadImage(urlString: photo?.urls?.url ?? "")
+        setupFavoriteButton()
+    }
+
+    func setupFavoriteButton() {
         let buttonImage = DatabaseManager.isFavorite(photo: photo ?? .init()) ? R.image.likeButton() : R.image.unlikeButton()
         favoriteButton.setImage(buttonImage, for: .normal)
     }
